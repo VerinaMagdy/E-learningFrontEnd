@@ -1,0 +1,23 @@
+#tb{
+ justify-self: center;
+}
+
+#d1{
+justify-content: center;
+
+}
+.center{
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+#hd{
+   display:flex ;
+   justify-content: center;
+   align-items: center;
+}
+
+#imgdiv{
+    height: 100vh;
+}

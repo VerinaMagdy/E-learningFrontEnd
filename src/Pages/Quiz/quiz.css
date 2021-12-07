@@ -1,0 +1,39 @@
+#duration{
+    width: 200px;
+    
+}
+#chapter{
+    width: 200px;
+    justify-self: left;
+}
+#div1
+{
+   justify-content: space-between;
+}
+#div2
+{
+justify-content: space-between;
+
+}
+#ques{
+    
+    justify-content: space-between; 
+}
+#mar{
+    
+    justify-content: space-between; 
+}
+#in1{
+    width: 200px;
+    justify-self: left;
+}
+#in2{
+     width: 200px;
+    justify-self: left;
+}
+#create{
+
+    margin-top: 100px;
+    margin-left:  50px;
+    width: 200px;
+  }

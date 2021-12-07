@@ -1,0 +1,15 @@
+ .Home{
+    text-align: center;
+    size: 100%;
+}
+.img{
+display: flex;
+justify-content: center;
+height: 300px;
+
+}
+.outer{
+display: inline-block;
+text-align: center;
+    
+}
