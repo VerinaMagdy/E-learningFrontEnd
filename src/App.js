@@ -22,7 +22,7 @@ return(
 <BrowserRouter>
 <Routes>
     {/* <Route exact path='/Login' render={()=> !isLog ?<Login isLogin={this.handleLogin}/>:<Home/> }/> */}
-    <Route  path='/LoginAdmin' element={<Login/>}/>
+    <Route  path='/Login' element={<Login/>}/>
     <Route  path='/LoginStudent' element={<LoginStudent/>}/>
     <Route path='/LoginStudent/quizzes' element={<Quizzes/>}/>
     <Route path='/LoginStudent/quizzes/attempt' element={<Attempt/>}/>

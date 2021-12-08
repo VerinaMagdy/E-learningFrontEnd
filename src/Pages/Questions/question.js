@@ -1,16 +1,52 @@
 import React from 'react';
 import './question.css';
 import { useState } from 'react';
+import axios from "axios";
 
+const baseURL = "http://127.0.0.1:3008";
 
-function Question (){
+ 
+
+  function Question (){
+
     const [inputList, setInputList] = useState([{ question: "", CorrectAnswer1: "" ,Answer2: "" ,Answer3: "" ,Answer4: "" }]);
+    
+      const [post, setPost] = React.useState(null);
+      
+      // React.useEffect(() => {
+      //   axios.post(`${baseURL}/api/questionbank/addquestion`).then((response) => {
+      //     setPost(response.data);
+      //   });
+      //  }, []);
+      function createPost() {
+        axios
+          .post(`${baseURL}/api/questionbank/addquestion`, {
+            question:splits[0],
+        right_answer:splits[1],
+        wrong_answers:[
+          splits[2],
+          splits[3],
+          splits[4]
+        ]
+          })
+          .then((response) => {
+            setPost(response.data);
+          });
+      }
+      const stringData = inputList.reduce((result, item) => {
+        return `${result}${item.question},${item.CorrectAnswer1},${item.Answer2},${item.Answer3},${item.Answer4}|`
+      }, "")
+       var splits = stringData.split(','); //console.log(splits); 
+       //if (!post) return "No post!"
+    
+
     
     const handleInputChange = (e, index) => {
         const { name, value } = e.target;
         const list = [...inputList];
         list[index][name] = value;
         setInputList(list);
+        
       };
       const handleRemoveClick = index => {
         const list = [...inputList];
@@ -20,6 +56,12 @@ function Question (){
       const handleAddClick = () => {
         setInputList([...inputList, { question: "", CorrectAnswer1: "" ,Answer2: "" ,Answer3: "" ,Answer4: "" }]);
       };
+      
+
+
+
+//console.log(stringData)
+     
         return(
             <div className="App">
             <h2>Question Bank</h2>
@@ -27,10 +69,12 @@ function Question (){
               return (
                 <div className="box">
                   <input
+                    id="qu"
                     name="question"
                     placeholder="Enter Your Question"
                     value={x.question}
                     onChange={e => handleInputChange(e, i)}
+                   
                   />
                   <input
                     className="ml10"
@@ -69,12 +113,12 @@ function Question (){
                 </div>
               );
             })}
-            {/* <div style={{ marginTop: 20 }}>{JSON.stringify(inputList)}</div> */}
-            <button id="submit" >Submit</button>
+            {/* <div style={{ marginTop: 20 }}>{JSON.stringify(inputList)}</div>*/}
+            <button id="submit" onClick={createPost} >Submit</button> 
           </div>
         );
       }
       
-      
+     
 
 export default Question;
