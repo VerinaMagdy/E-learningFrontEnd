@@ -1,9 +1,24 @@
 import React from 'react';
 import './quiz.css';
 import 'react-dropdown/style.css'
+import axios from "axios";
+import { useState } from 'react';
+
+const baseURL = "http://127.0.0.1:3008";
 
 function Quiz (){
-    
+    const [post, setPost] = React.useState(null);
+    const [inputList, setInputList] = useState([{ question: "", CorrectAnswer1: "" ,Answer2: "" ,Answer3: "" ,Answer4: "" }]);
+
+    function choosefromqb(){
+      
+            axios.get(baseURL).then((response) => {
+              setPost(response.data);
+             
+            });  
+            console.log(post);
+          if (!post) return null;
+    }
  return(
         <div className='Home'>
     <h2>Create Quiz</h2>
@@ -19,8 +34,9 @@ function Quiz (){
     <input id="in1" type = "text" placeholder='                                           1' /></div>
     <div id="mar"><label>Quiz Marks: </label>
     <input id="in2" type = "text" placeholder='                                           1' /></div>
+    <button id="qb" onClick={choosefromqb} >Choose from Question Bank </button>
     <button id="create" >Create Quiz</button>
-
+   
          </div>
          </div>
     )

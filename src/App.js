@@ -8,6 +8,7 @@ import Grades from './Pages/Grades/grades';
 import LoginStudent from './Pages/LoginStudent/LoginStudent';
 import Quizzes from './Pages/StudentQuiz/quizzes';
 import Attempt from './Pages/AttemptQuiz/attempt';
+import Review from './Pages/Review/review';
 
 class App extends React.Component{
   state={
@@ -30,6 +31,8 @@ return(
     <Route  path='/Login/Home/QuestionBank' element={<Question/>}/>
     <Route  path='/Login/Home/createquiz' element={<Quiz/>}/>
     <Route  path='/Login/Home/viewgrades' element={<Grades/>}/>
+    <Route  path='/LoginStudent/quizzes/attempt/review' element={<Review/>}/>
+    
   </Routes>
   </BrowserRouter>
 </div>

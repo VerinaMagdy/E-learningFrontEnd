@@ -13,11 +13,7 @@ const baseURL = "http://127.0.0.1:3008";
     
       const [post, setPost] = React.useState(null);
       
-      // React.useEffect(() => {
-      //   axios.post(`${baseURL}/api/questionbank/addquestion`).then((response) => {
-      //     setPost(response.data);
-      //   });
-      //  }, []);
+      
       function createPost() {
         axios
           .post(`${baseURL}/api/questionbank/addquestion`, {
