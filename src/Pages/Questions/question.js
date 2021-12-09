@@ -27,9 +27,11 @@ async function fetchRows(){
     // let questions=[];
     
       
-    function createPost() {
-      axios.post(`${baseURL}/api/questionbank/addquestion`, {
-        question:splits[0],
+      
+      function createPost() {
+        axios
+          .post(`${baseURL}/api/questionbank/addquestion`, {
+            question:splits[0],
         right_answer:splits[1],
         wrong_answers:[
           splits[2],

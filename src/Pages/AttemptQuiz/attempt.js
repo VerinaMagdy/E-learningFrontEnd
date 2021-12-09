@@ -1,19 +1,59 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import axios from "axios";
 import './attempt.css';
+import { useState } from 'react';
+import Solve from '../Solve/solve';
+import { useNavigate } from 'react-router-dom';
+import Review from'../Review/review'
+import { render } from 'react-dom';
+
+// we need to use it in on submit
+
+const baseURL = "http://127.0.0.1:3008/api/quiz/getquestions/1";
 function Attempt (){
-    // const Timer = (props) => { const {initialMinute = 0,initialSeconds = 0} = props; const [ minutes, setMinutes ] = useState(initialMinute); const [seconds, setSeconds ] = useState(initialSeconds); useEffect(()=>{ let myInterval = setInterval(() => { if (seconds > 0) { setSeconds(seconds - 1); } if (seconds === 0) { if (minutes === 0) { clearInterval(myInterval) } else { setMinutes(minutes - 1); setSeconds(59); } } }, 1000) return ()=> { clearInterval(myInterval); }; }); 
-        return(
-            
-                <div>
-                    
-                    <label>Quiz Duration:</label>
-                </div>
-        //        return ( <div> { minutes === 0 && seconds === 0 ? null : <h1> {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1> } </div>  
-         )
+    const [post, setPost] = React.useState(null);
+    const navigate=  useNavigate();
+    function getquiz(){
+        axios.get(baseURL).then((response) => {
+         var answer= response.data;
+         var len=answer.length;
+        // console.log(answer)
+         var rows = [];
+        for (var i = 0; i < len; i++) {
+            rows.push(Solve(answer[i]))
+            console.log(answer[i])
+        }
+    
+        return rows; 
+ 
+     
+         
+        
+        });
+        
+      
     }
+    
+    function submitquiz(e){
+        e.preventDefault();
+          navigate("/LoginStudent/quizzes/attempt/review");
 
+    }
+   
+  
+           return(
+            
+              <div>   
+           {getquiz()}
+           {/* <button onClick={() =>}>Start</button> */}
+           
+                <button onClick={submitquiz}>Submit</button> </div>
+            
+              );
+            
+           
 
+}
 export default Attempt;
 
 
