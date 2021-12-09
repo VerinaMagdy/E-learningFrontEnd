@@ -1,23 +1,25 @@
 import React from 'react';
 import Question from '../../Pages/Questions/question'
 import './Home.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+
 function Home (){
+  const {instructor_id} = useParams()
   const navigate=  useNavigate();
-  
+  console.log(instructor_id)
   function handlehome(e){
     e.preventDefault();
-    navigate("/Login/Home/QuestionBank");
+    navigate(`/Login/Home/QuestionBank/${instructor_id}`);
 
 }
 function handlequiz(e){
   e.preventDefault();
-  navigate("/Login/Home/createquiz");
+  navigate(`/Login/Home/createquiz/${instructor_id}`);
 
 }
 function handlegrades(e){
   e.preventDefault();
-  navigate("/Login/Home/viewgrades");
+  navigate(`/Login/Home/viewgrades/${instructor_id}`);
 
 }
 
