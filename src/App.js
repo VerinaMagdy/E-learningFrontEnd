@@ -23,7 +23,7 @@ return(
 <BrowserRouter>
 <Routes>
     {/* <Route exact path='/Login' render={()=> !isLog ?<Login isLogin={this.handleLogin}/>:<Home/> }/> */}
-<<<<<<< HEAD
+
     <Route  path='/Login' element={<Login />}/>
     <Route  path='/LoginStudent' element={<LoginStudent />}/>
     <Route path='/LoginStudent/quizzes/:student_id' element={<Quizzes/>}/>
@@ -32,18 +32,11 @@ return(
     <Route  path='/Login/Home/QuestionBank/:instructor_id' element={<Question/>}/>
     <Route  path='/Login/Home/createquiz/:instructor_id' element={<Quiz/>}/>
     <Route  path='/Login/Home/viewgrades/:instructor_id' element={<Grades/>}/>
-=======
-    <Route  path='/Login' element={<Login/>}/>
-    <Route  path='/LoginStudent' element={<LoginStudent/>}/>
-    <Route path='/LoginStudent/quizzes' element={<Quizzes/>}/>
-    <Route path='/LoginStudent/quizzes/attempt' element={<Attempt/>}/>
-    <Route  path='/Login/Home' element={<Home/>}/>
-    <Route  path='/Login/Home/QuestionBank' element={<Question/>}/>
-    <Route  path='/Login/Home/createquiz' element={<Quiz/>}/>
-    <Route  path='/Login/Home/viewgrades' element={<Grades/>}/>
-    <Route  path='/LoginStudent/quizzes/attempt/review' element={<Review/>}/>
+    <Route  path='/LoginStudent/quizzes/attempt/review/:student_id' element={<Review/>}/>
+
     
->>>>>>> refs/remotes/origin/main
+    
+
   </Routes>
   </BrowserRouter>
 </div>
