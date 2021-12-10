@@ -23,7 +23,6 @@ return(
 <BrowserRouter>
 <Routes>
     {/* <Route exact path='/Login' render={()=> !isLog ?<Login isLogin={this.handleLogin}/>:<Home/> }/> */}
-
     <Route  path='/Login' element={<Login />}/>
     <Route  path='/LoginStudent' element={<LoginStudent />}/>
     <Route path='/LoginStudent/quizzes/:student_id' element={<Quizzes/>}/>
@@ -33,9 +32,6 @@ return(
     <Route  path='/Login/Home/createquiz/:instructor_id' element={<Quiz/>}/>
     <Route  path='/Login/Home/viewgrades/:instructor_id' element={<Grades/>}/>
     <Route  path='/LoginStudent/quizzes/attempt/review/:student_id' element={<Review/>}/>
-
-    
-    
 
   </Routes>
   </BrowserRouter>
