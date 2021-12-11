@@ -1,6 +1,6 @@
 import React from 'react';
 import {ReactComponent as Logo} from '../../assets/instagram.svg'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './quizzes.css'
 import axios from "axios";
 import { useState } from 'react';
@@ -8,12 +8,13 @@ import {QueryClient, QueryClientProvider,useQuery} from 'react-query';
 
 const baseURL = "http://127.0.0.1:3008";
 async function fetchRows(){
-        const {data} = await axios.get(`${baseURL}/api/quiz/getInfo/1`)
+        const {data} = await axios.get(`${baseURL}/api/quiz/getInfo`)
         // console.log(data)
         return data
       }
       
 function Quizzes (){
+        const {student_id} = useParams()
         const navigate=  useNavigate();
         const [post, setPost] = React.useState(null);
         const {data, error, isError, isLoading } = useQuery('rows', fetchRows)
@@ -27,7 +28,7 @@ function Quizzes (){
        console.log(data);
         function attemptquiz(e){
                 e.preventDefault();
-                  navigate("/LoginStudent/quizzes/attempt/1");
+                  navigate(`/LoginStudent/quizzes/attempt/${student_id}/${data.id}`);
         }
 
         return(
