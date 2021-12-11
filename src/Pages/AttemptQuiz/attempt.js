@@ -41,7 +41,7 @@ async function fetchRows(){
     function submitquiz(e){
 
         e.preventDefault();
-          navigate("/LoginStudent/quizzes/attempt/review/1");
+          navigate("/quizzes/attempt/review/1");
  axios
         .post(`${baseURL}/api/quiz/submit`, {
          student_id:1,

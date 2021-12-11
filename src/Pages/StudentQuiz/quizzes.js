@@ -27,7 +27,7 @@ function Quizzes (){
        console.log(data);
         function attemptquiz(e){
                 e.preventDefault();
-                  navigate("/LoginStudent/quizzes/attempt/1");
+                  navigate("/quizzes/attempt/1");
         }
 
         return(

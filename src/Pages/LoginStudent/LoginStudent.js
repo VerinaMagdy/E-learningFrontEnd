@@ -32,7 +32,7 @@ function LoginStudent (){
             if(response.status==400){
                 alert(response.data)
             }else{
-                navigate(`/LoginStudent/quizzes/${response.data.id}`);
+                navigate(`/quizzes/${response.data.id}`);
             }
         })
 

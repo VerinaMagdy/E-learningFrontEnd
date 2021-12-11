@@ -60,7 +60,7 @@ function Quiz (){
         })
         .then((response) => {
           setPost(response.data);
-          navigate(`/LoginStudent/quizzes/attempt/1`);
+          navigate(`/quizzes/attempt/1`);
         });
         
       
