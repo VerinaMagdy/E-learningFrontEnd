@@ -18,7 +18,7 @@
     align-self: center;
 }
 
-input{
+.login_inst{
     width: 95%;
     border: 1px solid #dbdbdb;
     padding: 5px;

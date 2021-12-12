@@ -7,6 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Review from'../Review/review'
 import { render } from 'react-dom';
 import {QueryClient, QueryClientProvider,useQuery} from 'react-query';
+// import { Button, Radio } from 'react-bootstrap';
 
 
   
@@ -44,8 +45,6 @@ async function fetchRows({queryKey}){
 
         e.preventDefault();
 
-          navigate(`/quizzes/attempt/review/${student_id}/${quiz_id}`);
-
  axios
         .post(`${baseURL}/api/quiz/submit`, {
          student_id:student_id,
@@ -56,8 +55,15 @@ async function fetchRows({queryKey}){
         .then((response) => {
           setPost(response.data);
         });
-        console.log(answer);
     }
+    function finishquiz(e){
+
+      e.preventDefault();
+
+        navigate(`/quizzes/attempt/review/${student_id}/${quiz_id}`);
+
+
+  }
    const handleChange = e => {
       const name  = e.target;
   
@@ -72,13 +78,14 @@ async function fetchRows({queryKey}){
                  { data.map(question=>{
                      return (
                      <div key={question.question_id}className="box">
+                       <form>
                      <p
                      id="qu"
                      name="question"
                      >{question.question}</p>
                      {
                          question.choices.map(choice=>{
-                             return<div> <input   type="radio" value="choice" name={question.question_id} onClick={ ()=>setAnswer(choice)}/>{choice}
+                             return<div> <input type="radio" value={choice} name={question.question_id} onClick={ ()=>setAnswer(choice)}/>{choice}
                             
                         
                            </div>
@@ -86,13 +93,16 @@ async function fetchRows({queryKey}){
                         }
                      <div> 
                         <button id="submit" key={question.question_id} onClick={submitquiz}>Submit</button> </div>
-                        <footer>
-        <p>Online Quiz System, Copyright &copy; 2021</p>
-      </footer>
+                        </form>
                      </div>
                      )
                     }
                     )}
+                    <button id="finish" onClick={finishquiz}>Finish quiz</button> 
+                    <footer>
+        <p>Online Quiz System, Copyright &copy; 2021</p>
+      </footer>
+      
                     </div>
                     )
                             

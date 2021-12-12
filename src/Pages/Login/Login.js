@@ -104,8 +104,8 @@ function Login (){
                 </div>
                 <div>
                     <form onSubmit = {handleS  }  >
-                        <input name='username' placeholder='email...' required />
-                        <input type='password' name='password' placeholder='password...' required />
+                        <input class="login_inst" name='username' placeholder='email...' required />
+                        <input class="login_inst" type='password' name='password' placeholder='password...' required />
                         <button>Log In</button>
                     </form>
                 </div>
