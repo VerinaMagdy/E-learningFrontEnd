@@ -24,6 +24,8 @@ function handlegrades(e){
 }
 
     return(
+    
+    
   <div className='Home'>
     <h1>CSE487: E-Learning Course</h1>
     <div className='img'>
@@ -37,6 +39,27 @@ function handlegrades(e){
       <button onClick={handlegrades}>View Grades</button>
 
      </div>
+     {/* <div id="page-navbar">
+          <nav role="navigation" aria-label="Navigation bar">
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+      <a href="https://lms.eng.asu.edu.eg/my/"  >Dashboard</a>
+  </li>
+  <li class="breadcrumb-item">
+      <a href="https://lms.eng.asu.edu.eg/course/index.php"  >Courses</a>
+  </li>
+  <li class="breadcrumb-item">
+      <a href="https://lms.eng.asu.edu.eg/course/index.php?categoryid=424"  >Fall 2021</a>
+  </li>
+  <li class="breadcrumb-item">
+      <a href="https://lms.eng.asu.edu.eg/course/index.php?categoryid=426"  >Computer and Systems Engineering</a>
+  </li>
+  <li class="breadcrumb-item">
+      <a href="https://lms.eng.asu.edu.eg/course/view.php?id=9480" aria-current="page" title="CSE427 (UG2013) - Software Project Management (23387)">CSE427 (UG2013) - Software Project Management (23387)</a>
+  </li>
+</ol>
+</nav>
+      </div> */}
       </div>
 
 

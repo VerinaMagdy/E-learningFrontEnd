@@ -32,24 +32,32 @@ function LoginStudent (){
             if(response.status==400){
                 alert(response.data)
             }else{
-                navigate(`/LoginStudent/quizzes/${response.data.id}`);
+                navigate(`/quizzes/${response.data.id}`);
             }
         })
 
     }
         return(
             <div className='div-login'>
+                 <div class="card">
+    <div class="card-block">
+            <h2 class="card-header text-center">Ain Shams University - Faculty of Engineering</h2></div></div>
+         
                 <div className='div-login-logo'>
-                    <Logo/>
+                 <head>     <base href="/"/> </head>
+        <img id="pic" src="./images/lms.png"/>
                 </div>
                 <div>
-                    <form onSubmit = {handleS  }  >
+                    <form id="form" onSubmit = {handleS  }  >
                         <input name='username' placeholder='username...' required />
-                        <input type='password' name='password' placeholder='password...' />
+                        <input type='password' name='password' placeholder='password...' /><br></br>
                         <button>Log In</button>
                     </form>
+                    <footer>
+        <p>Online Quiz System, Copyright &copy; 2021</p>
+      </footer>
                 </div>
-            </div>
+                  </div>
         )
     }
 

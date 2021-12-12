@@ -21,19 +21,24 @@ class App extends React.Component{
 return(
 <div>
 <BrowserRouter>
+
 <Routes>
     {/* <Route exact path='/Login' render={()=> !isLog ?<Login isLogin={this.handleLogin}/>:<Home/> }/> */}
     <Route  path='/Login' element={<Login />}/>
-    <Route  path='/LoginStudent' element={<LoginStudent />}/>
-    <Route path='/LoginStudent/quizzes/:student_id' element={<Quizzes/>}/>
-    <Route path='/LoginStudent/quizzes/attempt/:student_id/:quiz_id' element={<Attempt/>}/>
+
+    <Route  path='/' element={<LoginStudent />}/>
+    <Route path='/quizzes/:student_id' element={<Quizzes/>}/>
+    <Route path='/quizzes/attempt/:student_id/:quiz_id' element={<Attempt/>}/>
     <Route  path='/Login/Home/:instructor_id' element={<Home/>}/>
     <Route  path='/Login/Home/QuestionBank/:instructor_id' element={<Question/>}/>
     <Route  path='/Login/Home/createquiz/:instructor_id' element={<Quiz/>}/>
     <Route  path='/Login/Home/viewgrades/:instructor_id' element={<Grades/>}/>
-    <Route  path='/LoginStudent/quizzes/attempt/review/:student_id/:quiz_id' element={<Review/>}/>
+
+    <Route  path='/quizzes/attempt/review/:student_id/:quiz_id' element={<Review/>}/>
+
 
   </Routes>
+  
   </BrowserRouter>
 </div>
 )

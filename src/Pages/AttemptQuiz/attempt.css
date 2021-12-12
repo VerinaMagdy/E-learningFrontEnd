@@ -1,4 +1,40 @@
-#quiz{
-
-    margin-left: 250px;
+header{
+    background:#35424a;
+    padding-top:10px;
+    min-height:30px;
+    margin-top: -15px;
+    margin-left: 0px;
+    border-bottom:#e8491d 3px solid;
+    
+  }
+  #submit{
+      
+    
+  
+    background: #35424a;
+    font-family: 'Open Sans Condensed', sans-serif;
+   
+    margin-left: 10px;
+    margin-bottom: 100px;
+   
+    border-radius: 5px;
 }
+#submit:hover{opacity:0.3}
+
+#rad{
+
+    color: green;
+}
+#in{
+    color: hotpink;
+}
+#in:hover{opacity:0.3}
+footer{
+    padding:10px;
+    margin-top:100px;
+    color:#ffffff;
+    background-color:hsl(24, 96%, 54%);
+    text-align: center;
+    height: 20px;
+    font-size: 10px;
+  }

@@ -43,7 +43,9 @@ async function fetchRows({queryKey}){
     function submitquiz(e){
 
         e.preventDefault();
-          navigate(`/LoginStudent/quizzes/attempt/review/${student_id}/${quiz_id}`);
+
+          navigate(`/quizzes/attempt/review/${student_id}/${quiz_id}`);
+
  axios
         .post(`${baseURL}/api/quiz/submit`, {
          student_id:student_id,
@@ -63,9 +65,11 @@ async function fetchRows({queryKey}){
       name
       });
     };
+
            return(
-               
-                  data.map(question=>{
+          <div>  <header>  <h2>CSE487 E-learning Systems</h2>
+           </header>
+                 { data.map(question=>{
                      return (
                      <div key={question.question_id}className="box">
                      <p
@@ -80,12 +84,17 @@ async function fetchRows({queryKey}){
                            </div>
                            })
                         }
-                     <div>  <button key={question.question_id} onClick={submitquiz}>Submit</button> </div>
+                     <div> 
+                        <button id="submit" key={question.question_id} onClick={submitquiz}>Submit</button> </div>
+                        <footer>
+        <p>Online Quiz System, Copyright &copy; 2021</p>
+      </footer>
                      </div>
                      )
                     }
+                    )}
+                    </div>
                     )
-                    );
                             
                      
                      
