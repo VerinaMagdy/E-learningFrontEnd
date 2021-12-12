@@ -7,6 +7,7 @@ const baseURL = "http://127.0.0.1:3008/api/quiz/preview";
 function Review(){
     const [post, setPost] = React.useState(null);
     function finalreview(){
+      
         axios.get(baseURL).then((response) => {
           setPost(response.data);
         });
