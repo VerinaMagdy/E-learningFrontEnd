@@ -60,7 +60,10 @@ function Quiz (){
         })
         .then((response) => {
           setPost(response.data);
-          navigate(`/quizzes/attempt/1`);
+
+
+          navigate(`/quizzes/attempt/1/${response.data.quiz_id}`);
+
         });
         
       
@@ -73,7 +76,7 @@ function Quiz (){
     <div id="div1">
         <label>Quiz duration </label>
    <input id="duration" type = "text" placeholder='                        add duration' value={duration} onChange={(e)=> { setDuration(parseInt(e.target.value))}}/><label> minutes</label><br></br>  </div>
-  <div> <label>Start time </label><input id="time" type = "text" placeholder='                        add time' value={starttime} onChange={(e)=> { setStarttime(parseInt(e.target.value))}}/><br></br>  </div>
+  <div> <label>Start time </label><input id="time" type = "text" placeholder='                        add time' value={starttime} onChange={(e)=> { setStarttime(e.target.value)}}/><br></br>  </div>
 
    <div id="div2"> <label>From Chapter </label><input id="chapter" type = "text" placeholder='                                ex:1' value={from} onChange={(e)=> { setFrom(parseInt(e.target.value))}}/><label> To </label><input id="chapter" type = "text" placeholder='                                     ex:10'value={to} onChange={(e)=> { setTo(parseInt(e.target.value))}}/></div>
       </div>

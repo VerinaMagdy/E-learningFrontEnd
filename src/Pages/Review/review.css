@@ -1,0 +1,18 @@
+header{
+    background:#35424a;
+    padding-top:10px;
+    min-height:30px;
+    margin-top: -15px;
+    margin-left: 0px;
+    border-bottom:#e8491d 3px solid;
+    
+  }
+  footer{
+    padding:10px;
+    margin-top:100px;
+    color:#ffffff;
+    background-color:hsl(24, 96%, 54%);
+    text-align: center;
+    height: 20px;
+    font-size: 10px;
+  }

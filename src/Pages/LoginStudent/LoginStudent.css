@@ -1,42 +1,57 @@
 .div-login{
-    width:200px;
-    height:300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin: 0 auto;
-    border: 1px solid #dbdbdb;
+    width:60%;
+     height:30%; 
+     border: 1px solid #dbdbdb;
+    /* display: flex; */
+    /* flex-direction: column;
+    justify-content: space-evenly; */
+    /* margin: 0 auto;
+   
     border-radius: 5px;
     padding: 20px;
-    margin-top: 10vh;
-    background-color: white;
+    margin-top: 10vh; */
+    /* background-color: white; */
 } 
 
 .div-login-logo{
-    height: 50px;
-    width: 50px;
-    align-self: center;
-}
+    height: 50%;
+    width: 50%;
+    
 
+} 
+
+#pic{ height: 40%;
+    width: 40%;
+    margin-left: 100px;
+    margin-right: auto;} 
 input{
-    width: 95%;
-    border: 1px solid #dbdbdb;
+    width: 50%;
+    height:100%;
+    border: 1px solid cadetblue;
     padding: 5px;
-    margin: 2px 0;
-    border-radius: 5px;
-    background-color: #fafafa;
+   
+    border-radius: 5px; 
     box-shadow: none;
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
 button{
-    width: 100%;
-    margin: 5px 0;
+     width: 30%; 
+    
     background-color: dodgerblue;
     font-family: 'Open Sans Condensed', sans-serif;
     padding: 5px;
     font-weight: 600;
     border: none;
-    color: white;
+    /* color: white; */
     border-radius: 5px;
 }
+footer{
+    padding:10px;
+    margin-top:100px;
+    color:#ffffff;
+    background-color:hsl(24, 96%, 54%);
+    text-align: center;
+    height: 20px;
+    font-size: 10px;
+  }
