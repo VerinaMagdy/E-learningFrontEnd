@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import {ReactComponent as Logo} from '../../assets/instagram.svg'
-import './login.css';
-import { useNavigate } from 'react-router-dom';
+import React, { Component } from "react";
+import { ReactComponent as Logo } from "../../assets/instagram.svg";
+import "./login.css";
+import { useNavigate } from "react-router-dom";
 // import { withNavigation } from 'react-navigation';
-import Home from '../Home/Home';
-import axios from 'axios';
+import Home from "../Home/Home";
+import axios from "axios";
 
 // class Login extends Component{
 //     state={
@@ -13,7 +13,7 @@ import axios from 'axios';
 //     }
 
 //     handleChange= (e)=>{
-        
+
 //         const {name,value} = e.target
 //         this.setState({[name]:value})
 
@@ -24,21 +24,20 @@ import axios from 'axios';
 //         e.preventDefault();
 //           console.log(this.state)
 //         // this.props.isLogin(true)
-        // axios.post(
-        //     `http://127.0.0.1:3008/api/instructor/login`,{
-        //         'username':this.state.username,
-        //         'password':this.state.password
-        //     }
-        // ).then((response)=>{
-        //     if(response.status==400){
-        //         alert(response.data)
-        //     }else{
-        //         // const navigate=  useNavigate();
-        //         // navigate("/Login/Home");
-        //         // this.props.navigation.navigate("/Login/Home")
-        //     }
-        // })
-        
+// axios.post(
+//     `http://127.0.0.1:3008/api/instructor/login`,{
+//         'username':this.state.username,
+//         'password':this.state.password
+//     }
+// ).then((response)=>{
+//     if(response.status==400){
+//         alert(response.data)
+//     }else{
+//         // const navigate=  useNavigate();
+//         // navigate("/Login/Home");
+//         // this.props.navigation.navigate("/Login/Home")
+//     }
+// })
 
 //     }
 
@@ -59,59 +58,66 @@ import axios from 'axios';
 //         )
 //     }
 // }
-function Login (){
-    const navigate=  useNavigate();
-    const state={
-        username:'',
-        password:''
-    }
-    
-    // function handleChange(e){
-        
-    //     const {name,value} = e.target
-    //     if(name=="username"){
-    //         state.username=value
-    //     }else{
-    //         state.password=value
-    //     }
-        
-    // }
+function Login() {
+  const navigate = useNavigate();
+  const state = {
+    username: "",
+    password: "",
+  };
 
+  // function handleChange(e){
 
-   function handleS(e){
-        e.preventDefault();
-          console.log(e.target)
-        // this.props.isLogin(true)
-        axios.post(
-            `http://127.0.0.1:3008/api/instructor/login`,{
-                username:e.target.username.value,
-                password:e.target.password.value
-            }
-        ).then((response)=>{
-            if(response.status==400){
-                alert(response.data)
-            }else{
-                navigate(`/Login/Home/${response.data.id}`);
-            }
-        })
-          
+  //     const {name,value} = e.target
+  //     if(name=="username"){
+  //         state.username=value
+  //     }else{
+  //         state.password=value
+  //     }
 
-    }
-        return(
-            <div className='div-login'>
-                <div className='div-login-logo'>
-                    <Logo/>
-                </div>
-                <div>
-                    <form onSubmit = {handleS  }  >
-                        <input class="login_inst" name='username' placeholder='email...' required />
-                        <input class="login_inst" type='password' name='password' placeholder='password...' required />
-                        <button>Log In</button>
-                    </form>
-                </div>
-            </div>
-        )
-    }
+  // }
 
+  function handleS(e) {
+    e.preventDefault();
+    console.log(e.target);
+    // this.props.isLogin(true)
+    axios
+      .post(`http://127.0.0.1:3008/api/instructor/login`, {
+        username: e.target.username.value,
+        password: e.target.password.value,
+      })
+      .then((response) => {
+        if (response.status == 400) {
+          alert(response.data);
+        } else {
+          navigate(`/Login/Home/${response.data.id}`);
+        }
+      });
+  }
+  return (
+    <div className="div-login">
+      <div className="div-login-logo">
+        <Logo />
+      </div>
+      <div>
+        <form onSubmit={handleS}>
+          <input
+            class="login_inst"
+            name="username"
+            placeholder="email..."
+            required
+          />
+          <input
+            class="login_inst"
+            type="password"
+            name="password"
+            placeholder="password..."
+            required
+          />
+          <button>Log In</button>
+        </form>
+      </div>
+    </div>
+  );
+}
 
 export default Login;

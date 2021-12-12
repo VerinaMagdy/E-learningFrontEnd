@@ -1,11 +1,15 @@
-body{
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;600;700&display=swap");
+
+body {
   margin: 0;
-  font-family: 'Open Sans Condensed',sans-serif;
+  font-family: "Lexend", sans-serif;
   padding: 0;
   height: 100vh;
   background-color: darkgray;
-  }
-  code{
-  font-family: source-code-pro,Menlo,Monaco,Consolas,"Courier New",
-  monospace;
-  }
+  letter-spacing: 1.2px;
+}
+
+input,
+button {
+  font-family: "Lexend", sans-serif;
+}
