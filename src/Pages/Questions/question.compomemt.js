@@ -18,22 +18,6 @@ class Question extends Component{
                             return <p>{choice}</p>
                         })
                     }
-                  {/* <p
-                    className="ml10"
-                    name="CorrectAnswer1"
-                  >{choices[0]}</p>
-                  <p
-                    className="ml20"
-                    name="Answer2"
-                    >{choices[1]}</p>
-                  <p
-                    className="ml30"
-                    name="Answer3"
-                    >{choices[2]}</p>
-                  <p
-                    className="ml40"
-                    name="Answer4"
-                    >{choices[3]}</p> */}
                   <div className="btn-box">
                     {inputList.length !== 1 && <button
                       className="mr10"

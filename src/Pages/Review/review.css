@@ -5,7 +5,8 @@ header{
     margin-top: -15px;
     margin-left: 0px;
     border-bottom:#e8491d 3px solid;
-    
+    padding-left: 20px;
+    color: #ffffff;
   }
   footer{
     padding:10px;
@@ -13,6 +14,47 @@ header{
     color:#ffffff;
     background-color:hsl(24, 96%, 54%);
     text-align: center;
-    height: 20px;
+    height: 40px;
     font-size: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
+  .review_question{
+    width: 55%;
+    height: 250px;
+    border-radius: 5px;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    padding: 0 0  0 50px;
+    margin:  50px auto;
+    background-color: gray;
+    opacity: 0.9;
+}
+.review_question_header{
+  font-size: large;
+  font-weight: bold;
+}
+.review_choices{
+  padding-left: 20px;
+}
+.div_choices{
+  margin-left: 30px;
+}
+#review_grade{
+  margin: 150px 0 20px 20px;
+}
+#review_correct{
+  color: green;
+  /* background-color: green; */
+}
+#review_wrong{
+  color: red;
+  /* background-color: red; */
+}
+#for_margin{
+  margin-top: 100px;
+}

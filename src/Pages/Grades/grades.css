@@ -21,3 +21,42 @@ justify-content: center;
 #imgdiv{
     height: 100vh;
 } */
+.center{
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    width: 60vw;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:  50px auto;
+    background-color: gray;
+    opacity: 0.9;
+    padding: 2px;
+}
+th{
+    width: 20vw;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid white;
+}
+td{
+    width: 20vw;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid white;
+}
+table{
+    border-collapse: collapse;
+    margin: 2px;
+}
+#hd{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+ }
+#view_grades{
+    align-self: center;
+}

@@ -20,7 +20,7 @@ justify-content: space-between;
 }
 #ques{
     
-    justify-content: space-between; 
+    display: inline-block;
 }
 #mar{
     
@@ -34,15 +34,47 @@ justify-content: space-between;
      width: 200px;
     justify-self: left;
 }
-/* #create{
-
-    margin-top: 100px;
-    margin-left:  50px;
-    width: 200px;
-  } */
   #create{
-
-    margin-top: 100px;
-    margin-left:  50px;
+    align-self: right;
+    justify-self: right;
     width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 50px;
   }
+  #create_quiz_btn_div{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: right;
+      align-items: right;
+      align-content: right;
+  }
+  
+.quiz_inner{
+    width: 55%;
+    height: 70vh;
+    border-radius: 5px;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: 7.5vh auto;
+    background-color: gray;
+    opacity: 0.9;
+}
+
+.quiz_inner label{
+    font-size: x-large;
+
+}
+
+.quiz_inner div{
+    margin: 20px;
+}
+
+#quiz_create{
+    margin-top: 30px;
+    align-self: center;
+    font-size: xx-large;
+}

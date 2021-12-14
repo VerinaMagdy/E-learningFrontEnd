@@ -2,79 +2,12 @@ import React, { Component } from "react";
 import { ReactComponent as Logo } from "../../assets/instagram.svg";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
-// import { withNavigation } from 'react-navigation';
 import Home from "../Home/Home";
 import axios from "axios";
 
-// class Login extends Component{
-//     state={
-//         username:'',
-//         password:''
-//     }
 
-//     handleChange= (e)=>{
-
-//         const {name,value} = e.target
-//         this.setState({[name]:value})
-
-//     }
-
-//     // const navigate=  useNavigate();
-//     handleS= (e)=>{
-//         e.preventDefault();
-//           console.log(this.state)
-//         // this.props.isLogin(true)
-// axios.post(
-//     `http://127.0.0.1:3008/api/instructor/login`,{
-//         'username':this.state.username,
-//         'password':this.state.password
-//     }
-// ).then((response)=>{
-//     if(response.status==400){
-//         alert(response.data)
-//     }else{
-//         // const navigate=  useNavigate();
-//         // navigate("/Login/Home");
-//         // this.props.navigation.navigate("/Login/Home")
-//     }
-// })
-
-//     }
-
-//     render(){
-//         return(
-//             <div className='div-login'>
-//                 <div className='div-login-logo'>
-//                     <Logo/>
-//                 </div>
-//                 <div>
-//                     <form onSubmit = {this.handleS  }  >
-//                         <input name='username' placeholder='email...' required onChange={this.handleChange}/>
-//                         <input type='password' name='password' placeholder='password...' required onChange={this.handleChange}/>
-//                         <button onSubmit={ this.handleS }>Log In</button>
-//                     </form>
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
 function Login() {
   const navigate = useNavigate();
-  const state = {
-    username: "",
-    password: "",
-  };
-
-  // function handleChange(e){
-
-  //     const {name,value} = e.target
-  //     if(name=="username"){
-  //         state.username=value
-  //     }else{
-  //         state.password=value
-  //     }
-
-  // }
 
   function handleS(e) {
     e.preventDefault();
@@ -94,29 +27,39 @@ function Login() {
       });
   }
   return (
+    <div className="div-background">
     <div className="div-login">
-      <div className="div-login-logo">
-        <Logo />
-      </div>
-      <div>
-        <form onSubmit={handleS}>
+      <p className="title">Welcome Back</p>
+      {/* to maintain constant width of elements */}
+      <div className="middle-container">
+        <img
+          className="slogin-pic"
+          id="pic"
+          src="./images/lms.png"
+          alt="lms"
+        />
+        <form className="slogin-form" id="form" onSubmit={handleS}>
           <input
-            class="login_inst"
+            className="slogin-input"
             name="username"
-            placeholder="email..."
+            placeholder="Username"
             required
           />
           <input
-            class="login_inst"
+            className="slogin-input"
             type="password"
             name="password"
-            placeholder="password..."
+            placeholder="Password"
             required
           />
-          <button>Log In</button>
+          <button className="button">Login</button>
         </form>
+        <p className="last-text">
+          Online Quiz System, Copyright &#x24B8; {new Date().getFullYear()}
+        </p>
       </div>
     </div>
+  </div>
   );
 }
 

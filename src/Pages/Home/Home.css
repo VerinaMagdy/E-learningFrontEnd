@@ -1,15 +1,25 @@
-/* .Home{
+.home_inner{
+    margin: auto;
     text-align: center;
     size: 100%;
+    align-items: center;
 }
-.img{
+.home_img{
 display: flex;
 justify-content: center;
-height: 300px;
-
+height: 50vh;
+margin: auto;
+margin: 50px auto 50px auto;
 }
 .outer{
 display: inline-block;
-text-align: center;
-    
-} */
+width: 50%;
+
+}
+.HomeButtons{
+    border-radius: 5px;
+    height: 60px;
+    width: 25%;
+    margin: 0 25px ;
+    font-weight: bold;
+}

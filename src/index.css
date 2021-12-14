@@ -13,3 +13,6 @@ input,
 button {
   font-family: "Lexend", sans-serif;
 }
+button:hover{
+  cursor: pointer;
+}
